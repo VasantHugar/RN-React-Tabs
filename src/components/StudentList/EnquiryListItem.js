@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import ImageButton from "../../Helper/ImageButton";
 
-const studentListItem = (props) => (
+const enquiryListItem = (props) => (
     <TouchableOpacity onPress={props.onItemPressed}>
 
         <View style={styles.listItem}>
@@ -12,8 +12,10 @@ const studentListItem = (props) => (
                 style={styles.image} />
             <View style={{ flex: 1 }}>
                 <Text style={styles.nameText}>{props.item.name}</Text>
-                <Text style={styles.otherText}>{props.item.category}</Text>
-                <Text style={styles.otherText}>{props.item.batchName}</Text>
+                <Text style={styles.otherText}>{props.item.enquiryStatus}</Text>
+                <Text style={styles.otherText}>{props.item.location}</Text>
+                <Text style={styles.otherText}>{props.item.categoryName}</Text>
+                <Text style={styles.otherText}>{props.item.tag}</Text>
             </View>
             <View style={{ width: 40 }}>
                 <ImageButton
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
     nameText: {
         fontSize: 16,
         // fontWeight: 'bold',
+        marginTop: 2
     },
     otherText: {
         fontSize: 12,
@@ -57,4 +60,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default studentListItem;
+export default enquiryListItem;

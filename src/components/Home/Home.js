@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import HorizontalButtons from './HorizontalButtons';
 
 import StudentList from '../StudentList/StudentList';
+import { NetworkHandler } from '../../Helper/NetworkHandler';
 
 export default class Home extends React.Component {
 
@@ -14,58 +15,50 @@ export default class Home extends React.Component {
 
     state = {
         isSelectedEnquiries: true,
-        enquiries: []
+        enquiries: [],
+        students: []
     }
 
-    students = [
-        { key: "10", name: "Student", activity: "Dance", address: "World Trade Centre", institute: "At the institude", response: "Be the first one to response" },
-        { key: "11", name: "Student", activity: "Dance", address: "World Trade Centre", institute: "At the institude", response: "Be the first one to response" },
-        { key: "12", name: "Student", activity: "Dance", address: "World Trade Centre", institute: "At the institude", response: "Be the first one to response" },
-        { key: "13", name: "Student", activity: "Dance", address: "World Trade Centre", institute: "At the institude", response: "Be the first one to response" },
-        { key: "14", name: "Student", activity: "Dance", address: "World Trade Centre", institute: "At the institude", response: "Be the first one to response" },
-        { key: "15", name: "Student", activity: "Dance", address: "World Trade Centre", institute: "At the institude", response: "Be the first one to response" },
-        { key: "14", name: "Student", activity: "Dance", address: "World Trade Centre", institute: "At the institude", response: "Be the first one to response" },
-        { key: "15", name: "Student", activity: "Dance", address: "World Trade Centre", institute: "At the institude", response: "Be the first one to response" },
-    ]
+    componentWillMount() {
+        this.fetchEnquiries()
+    }
 
     onPressEnquiriesHandler = () => {
-        this.setState({ isSelectedEnquiries: true });
-        this.fetchEnquiries();
+
+        if (this.state.isSelectedEnquiries == false) {
+            this.setState({ isSelectedEnquiries: true });
+        }
+
+        if (this.state.enquiries.length == 0) {
+            this.fetchEnquiries();
+        }
     }
 
     onPressStudentsHandler = () => {
-        this.setState({ isSelectedEnquiries: false });
-        this.fetchStudents();
+
+        if (this.state.isSelectedEnquiries == true) {
+            this.setState({ isSelectedEnquiries: false });
+        }
+
+        if (this.state.students.length == 0) {
+            this.fetchStudents();
+        }
     }
 
     fetchEnquiries = () => {
-
-        const url = "http://www.mocky.io/v2/5c41920e0f0000543fe7b889";
-
-        fetch(url)
-            .then(res => res.json())
-            .then(res => {
-                console.log("Enquiries Res: ", res["dataList"]);
-                this.setState({ enquiries: res["dataList"] })
-            })
-            .catch(error => {
-                console.log("Enquiries Error: ", error);
-            });
+        NetworkHandler.fetchEnquiries((results, error) => {
+            if (results.length != 0) {
+                this.setState({ enquiries: results })
+            }
+        });
     };
 
     fetchStudents = () => {
-
-        const url = "http://www.mocky.io/v2/5c41950b0f0000543fe7b8a2";
-
-        fetch(url)
-            .then(res => res.json())
-            .then(res => {
-                console.log("Students Res: ", res["dataList"]);
-                this.setState({ students: res["dataList"] })
-            })
-            .catch(error => {
-                console.log("Students Error: ", error);
-            });
+        NetworkHandler.fetchStudents((results, error) => {
+            if (results.length != 0) {
+                this.setState({ students: results })
+            }
+        });
     };
 
     render() {

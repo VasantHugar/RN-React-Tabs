@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, View, StyleSheet, Dimensions, TouchableOpacity, Text } from 'react-native';
 
+import { Color } from '../../Helper/Constants';
+
 const screen = Dimensions.get('screen');
 const screenWidth = screen.width;
 
@@ -10,7 +12,7 @@ const HorizontalButtons = (props) => (
 
             <TouchableOpacity onPress={() => props.onPressFirst()} style={styles.touchableContainer}>
                 <View style={styles.touchableView}>
-                    <Text style={[styles.touchableText, { color: props.isEnquiry ? "#60D1A0" : "black" }]}>Enquiries</Text>
+                    <Text style={[styles.touchableText, { color: props.isEnquiry ? Color.theme : "black" }]}>Enquiries</Text>
                 </View>
             </TouchableOpacity>
 
@@ -18,7 +20,7 @@ const HorizontalButtons = (props) => (
 
             <TouchableOpacity onPress={() => props.onPressSecond()} style={styles.touchableContainer}>
                 <View style={styles.touchableView}>
-                    <Text style={[styles.touchableText, { color: props.isEnquiry ? "black" : "#60D1A0" }]}>Students</Text>
+                    <Text style={[styles.touchableText, { color: props.isEnquiry ? "black" : Color.theme }]}>Students</Text>
                 </View>
             </TouchableOpacity>
 
@@ -45,11 +47,11 @@ const styles = StyleSheet.create({
         flex: 1
     },
     touchableText: {
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: 'bold',
     },
     virticalSeperator: {
-        backgroundColor: "#EBEBEB",
+        backgroundColor: Color.seperator,
         width: 1,
         height: "80%"
     },
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     marker: {
         flex: 1,
         width: "60%",
-        backgroundColor: "#60D1A0"
+        backgroundColor: Color.theme
     }
 });
 

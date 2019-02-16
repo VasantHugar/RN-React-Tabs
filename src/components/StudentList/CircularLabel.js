@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet} from "react-native";
-
+import { View, Text, StyleSheet } from "react-native";
+import { Color } from '../../Helper/Constants';
 
 const circularLabel = props => {
     return (
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         height: 20,
         width: 20,
         borderRadius: 10,
-        backgroundColor: "#60D1A0",
+        backgroundColor: Color.theme,
         alignItems: 'center',
         justifyContent: 'center',
     },

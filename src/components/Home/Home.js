@@ -5,6 +5,8 @@ import HorizontalButtons from './HorizontalButtons';
 import StudentList from '../StudentList/StudentList';
 import { NetworkHandler } from '../../Helper/NetworkHandler';
 
+import { Color } from '../../Helper/Constants';
+
 export default class Home extends React.Component {
 
     static navigationOptions = () => {
@@ -81,10 +83,9 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: 'white',
     },
     seperator: {
-        backgroundColor: '#EBEBEB',
+        backgroundColor: Color.seperator,
         width: '100%',
         height: 1
     },

@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         width: 34,
         height: 34,
-        margin: 5
+        margin: 0
     },
     touchable: {
         alignItems: 'center',

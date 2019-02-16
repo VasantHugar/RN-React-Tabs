@@ -3,8 +3,10 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import ImageButton from "../../Helper/ImageButton";
 import CircularLabel from "./CircularLabel";
 import Styles from "./Styles";
+import {call} from "../../Helper/Call";
 
 const enquiryListItem = (props) => (
+    
     <TouchableOpacity onPress={props.onItemPressed}>
 
         <View style={Styles.listItem}>
@@ -29,7 +31,7 @@ const enquiryListItem = (props) => (
                 <ImageButton
                     image={require('../../assets/telephone_icon.png')}
                     onPress={() => {
-                        alert("Coming soon!");
+                        call(props.item.phoneNumber);
                     }} />
             </View>
         </View>

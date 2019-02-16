@@ -3,10 +3,10 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import ImageButton from "../../Helper/ImageButton";
 import CircularLabel from "./CircularLabel";
 import Styles from "./Styles";
-import {call} from "../../Helper/Call";
+import { call } from "../../Helper/Call";
 
 const enquiryListItem = (props) => (
-    
+
     <TouchableOpacity onPress={props.onItemPressed}>
 
         <View style={Styles.listItem}>
@@ -14,7 +14,11 @@ const enquiryListItem = (props) => (
             <CircularLabel text={props.item.name.charAt(0).toUpperCase()} />
 
             <View style={Styles.labelContainer}>
-                <Text style={Styles.nameText}>{props.item.name}</Text>
+                <View style={Styles.titleLabelConainer}>
+                    <Text style={Styles.nameText}>{props.item.name}</Text>
+                    <Text style={Styles.platformTag}>New</Text>
+                </View>
+                {/* <Text style={Styles.nameText}>{props.item.name}</Text> */}
                 <Text style={Styles.otherText}>{props.item.enquiryStatus}</Text>
                 <Text style={Styles.otherText}>{props.item.location}</Text>
                 <Text style={Styles.otherText}>{props.item.categoryName}</Text>

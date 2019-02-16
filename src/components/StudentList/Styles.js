@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
         paddingTop: 15,
         paddingBottom: 15,
-        paddingRight: 0, // Because Button asset itself got spacing
+        paddingRight: 5, // Because Button asset itself got spacing
         flexDirection: "row",
     },
     labelContainer: {
@@ -16,10 +16,11 @@ const styles = StyleSheet.create({
     },
     titleLabelConainer: {
         flexDirection: 'row', 
-        alignItems: 'center'
+        alignItems: 'center',
     },
     buttonContainer: {
-        width: 40
+        width: 40,
+        paddingLeft: 10
     },
     nameText: {
         fontSize: 16,

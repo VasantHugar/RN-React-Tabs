@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import HorizontalButtons from './HorizontalButtons';
 
-import StudentList from '../StudentList/StudentList';
-import { NetworkHandler } from '../../Helper/NetworkHandler';
+import ItemList from '../ItemList/ItemList';
+import { NetworkHandler } from '../../helper/NetworkHandler';
 
-import { Color } from '../../Helper/Constants';
+import { Color } from '../../helper/Constants';
 
 export default class Home extends React.Component {
 
@@ -72,7 +72,7 @@ export default class Home extends React.Component {
                     onPressSecond={this.onPressStudentsHandler}
                 />
                 <View style={styles.seperator} />
-                <StudentList
+                <ItemList
                     dataList={this.state.isSelectedEnquiries ? this.state.enquiries : this.state.students}
                     enquiries={this.state.isSelectedEnquiries} />
             </View>

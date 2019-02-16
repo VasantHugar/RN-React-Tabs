@@ -1,6 +1,6 @@
 
 import { StyleSheet } from "react-native";
-import * as Constant from '../../Helper/Constants';
+import * as Constant from '../../../helper/Constants';
 
 const styles = StyleSheet.create({
     listItem: {

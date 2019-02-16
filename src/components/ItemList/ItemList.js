@@ -1,8 +1,8 @@
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 
-import StudentListItem from '../StudentList/StudentListItem';
-import EnquiryListItem from '../StudentList/EnquiryListItem';
+import StudentListItem from './Item/StudentListItem';
+import EnquiryListItem from './Item/EnquiryListItem';
 
 const studentList = props => {
     return (

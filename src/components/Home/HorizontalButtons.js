@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, View, StyleSheet, Dimensions, TouchableOpacity, Text } from 'react-native';
 
-import { Color } from '../../Helper/Constants';
+import { Color } from '../../helper/Constants';
 
 const screen = Dimensions.get('screen');
 const screenWidth = screen.width;

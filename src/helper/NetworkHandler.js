@@ -16,7 +16,14 @@ export const NetworkHandler = {
             .then(res => {
                 console.log("Response(" + url + "): ");
                 console.log(res);
-                completion(res["dataList"], null);
+
+                const dataList = res["dataList"];
+                const temp = [];
+                dataList.forEach(element => {
+                    element["isFavourite"] = false;
+                    temp.push(element);
+                });
+                completion(temp, null);
             })
             .catch(error => {
                 console.log("Response Error (" + url + "): " + error);

@@ -26,9 +26,10 @@ const enquiryListItem = (props) => (
 
             <View style={Styles.buttonContainer}>
                 <ImageButton
-                    image={require('../../../assets/star_selected_icon.png')}
+                    image={props.item.isFavourite ? require('../../../assets/star_selected_icon.png') : require('../../../assets/star_unselected_icon.png')}
                     onPress={() => {
                         console.log("On press star");
+                        props.item.isFavourite = !props.item.isFavourite;
                     }} />
 
                 <ImageButton

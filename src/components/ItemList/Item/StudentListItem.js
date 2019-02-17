@@ -7,7 +7,7 @@ import {call} from "../../../helper/Call";
 
 const studentListItem = (props) => (
     
-    <TouchableOpacity onPress={props.onItemPressed}>
+    <TouchableOpacity onPress={() => props.onItemPressed(props.item)}>
 
         <View style={Styles.listItem}>
             <CircularLabel text={props.item.name.charAt(0).toUpperCase()} />

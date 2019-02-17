@@ -11,7 +11,7 @@ const studentList = props => {
             data={props.dataList}
             keyExtractor={(item, index) => item + index}
             renderItem={(info) => (
-                props.enquiries ? <EnquiryListItem item={info.item} /> : <StudentListItem item={info.item} />
+                props.enquiries ? <EnquiryListItem item={info.item} onItemPressed={props.onItemPressed} /> : <StudentListItem item={info.item} onItemPressed={props.onItemPressed}/>
             )}
         />
     );

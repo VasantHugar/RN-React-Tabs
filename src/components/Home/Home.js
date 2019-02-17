@@ -47,6 +47,10 @@ export default class Home extends React.Component {
         }
     }
 
+    onPressItemHandler = (item) => {
+        this.props.navigation.push("Details", { item: item, enquiries: this.state.isSelectedEnquiries });
+    }
+
     fetchEnquiries = () => {
         NetworkHandler.fetchEnquiries((results, error) => {
             if (results.length != 0) {
@@ -74,7 +78,8 @@ export default class Home extends React.Component {
                 <View style={styles.seperator} />
                 <ItemList
                     dataList={this.state.isSelectedEnquiries ? this.state.enquiries : this.state.students}
-                    enquiries={this.state.isSelectedEnquiries} />
+                    enquiries={this.state.isSelectedEnquiries}
+                    onItemPressed={this.onPressItemHandler} />
             </View>
         );
     }

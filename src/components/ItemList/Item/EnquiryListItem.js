@@ -7,7 +7,7 @@ import { call } from "../../../helper/Call";
 
 const enquiryListItem = (props) => (
 
-    <TouchableOpacity onPress={props.onItemPressed}>
+    <TouchableOpacity onPress={() => props.onItemPressed(props.item)}>
 
         <View style={Styles.listItem}>
 
@@ -18,7 +18,6 @@ const enquiryListItem = (props) => (
                     <Text style={Styles.nameText}>{props.item.name}</Text>
                     <Text style={Styles.platformTag}>New</Text>
                 </View>
-                {/* <Text style={Styles.nameText}>{props.item.name}</Text> */}
                 <Text style={Styles.otherText}>{props.item.enquiryStatus}</Text>
                 <Text style={Styles.otherText}>{props.item.location}</Text>
                 <Text style={Styles.otherText}>{props.item.categoryName}</Text>

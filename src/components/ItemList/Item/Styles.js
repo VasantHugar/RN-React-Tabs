@@ -1,6 +1,6 @@
 
 import { StyleSheet } from "react-native";
-import * as Constant from '../../../helper/Constants';
+import {Color} from '../../../helper/Constants';
 
 const styles = StyleSheet.create({
     listItem: {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         marginLeft: 3
     },
     seperator: {
-        backgroundColor: Constant.Color.seperator,
+        backgroundColor: Color.seperator,
         width: '100%',
         height: 1
     },

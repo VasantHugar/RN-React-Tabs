@@ -7,7 +7,7 @@ import { NetworkHandler } from '../../helper/NetworkHandler';
 
 import { Color } from '../../helper/Constants';
 
-export default class Home extends React.Component {
+export default class HomeScreen extends React.Component {
 
     static navigationOptions = () => {
         return {
